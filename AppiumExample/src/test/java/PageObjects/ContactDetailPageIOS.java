@@ -2,7 +2,9 @@ package PageObjects;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.pagefactory.iOSFindBy;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -15,7 +17,8 @@ public class ContactDetailPageIOS implements ContactDetailPage {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
-    @FindBy(xpath = "//UIAApplication[1]/UIAWindow[1]/UIAStaticText[1]")
+    @AndroidFindBy(id = "detail_name")
+    @iOSFindBy(xpath = "//UIAApplication[1]/UIAWindow[1]/UIAStaticText[1]")
     public MobileElement contactName;
 
     public String getContactName() {

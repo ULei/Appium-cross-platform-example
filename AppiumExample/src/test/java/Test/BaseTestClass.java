@@ -20,11 +20,11 @@ public class BaseTestClass extends AppiumBaseClass{
         switch (AppiumController.executionOS) {
             case ANDROID:
                 searchPage = new ContactSearchPageAndroid(driver());
-                detailPage = new ContactDetailPageAndroid(driver());
+                detailPage = new ContactDetailPageBoth(driver());
                 break;
             case IOS:
                 searchPage = new ContactSearchPageIOS(driver());
-                detailPage = new ContactDetailPageIOS(driver());
+                detailPage = new ContactDetailPageBoth(driver());
                 break;
         }
     }
